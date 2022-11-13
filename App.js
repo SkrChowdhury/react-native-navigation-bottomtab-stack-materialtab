@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import Home from "./screens/Home";
 import Profile from "./screens/Profile";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -26,7 +27,7 @@ const App = () => {
           options={{
             tabBarLabel: "Profile",
             tabBarIcon: ({ color }) =>
-              <MaterialCommunityIcons name="account" color={color} size={26} />
+              <FontAwesome name="user" color={color} size={26} />
           }}
         />
       </Tab.Navigator>

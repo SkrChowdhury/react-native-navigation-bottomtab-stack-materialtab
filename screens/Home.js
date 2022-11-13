@@ -3,8 +3,17 @@ import React from "react";
 
 const Home = () => {
   return (
-    <View style={styles.container}>
-      <Text>Home Screen</Text>
+    <View
+      style={{
+        backgroundColor: "#022",
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center"
+      }}
+    >
+      <Text style={{ color: "white", fontSize: 20, alignSelf: "center" }}>
+        Home Screen
+      </Text>
     </View>
   );
 };
