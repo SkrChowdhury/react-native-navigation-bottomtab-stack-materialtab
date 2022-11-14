@@ -4,8 +4,14 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/Home";
 import About from "../screens/About";
 import Contact from "../screens/Contact";
+import { Button } from "react-native";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
+import Settings from "../screens/Settings";
 
 const Stack = createStackNavigator();
+const navigation = useNavigation();
 
 const screenOptionStyle = {
   headerStyle: {
@@ -34,7 +40,17 @@ const ContactStackNavigator = () => {
       <Stack.Screen
         name="Contact"
         component={Contact}
-        options={{ headerShown: false }}
+        options={{
+          headerTitle: "Contact",
+          headerLeft: () =>
+            <FontAwesome
+              onPress={() => navigation.navigate("Home")}
+              name="chevron-left"
+              size={20}
+              color="white"
+              style={{ padding: 5 }}
+            />
+        }}
       />
     </Stack.Navigator>
   );

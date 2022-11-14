@@ -4,7 +4,9 @@ import { View, Button, Text, StyleSheet } from "react-native";
 const Home = ({ navigation }) => {
   return (
     <View style={styles.center}>
-      <Text>This is the home screen</Text>
+      <Text style={{ fontSize: 18, marginBottom: 15 }}>
+        This is the home screen
+      </Text>
       <Button
         title="Go to About Screen"
         onPress={() => navigation.navigate("About")}

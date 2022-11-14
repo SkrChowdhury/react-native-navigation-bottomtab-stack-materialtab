@@ -4,7 +4,7 @@ import { View, StyleSheet, Text } from "react-native";
 const Contact = () => {
   return (
     <View style={styles.center}>
-      <Text>This is the contact screen</Text>
+      <Text style={{ fontSize: 18 }}>This is the contact screen</Text>
     </View>
   );
 };
@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    textAlign: "center"
+    textAlign: "center",
+    backgroundColor: "#5f9ea0"
   }
 });
 

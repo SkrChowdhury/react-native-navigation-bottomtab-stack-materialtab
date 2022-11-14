@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MainStackNavigator, ContactStackNavigator } from "./StackNavigator";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Settings from "../screens/Settings";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,12 +20,21 @@ const BottomTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Contact"
+        name="Profile"
         component={ContactStackNavigator}
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color }) =>
             <FontAwesome name="user" color={color} size={26} />
+        }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={Settings}
+        options={{
+          tabBarLabel: "Settings",
+          tabBarIcon: ({ color }) =>
+            <FontAwesome name="gear" color={color} size={26} />
         }}
       />
     </Tab.Navigator>
