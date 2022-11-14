@@ -1,41 +1,25 @@
-import { View, Text, Button } from "react-native";
 import React from "react";
-import Cart from "./Cart";
-import { useNavigation } from "@react-navigation/native";
+import { View, Button, Text, StyleSheet } from "react-native";
 
-const Home = () => {
-  const navigation = useNavigation();
+const Home = ({ navigation }) => {
   return (
-    <View style={{ flex: 1 }}>
-      <Text style={{ fontSize: 20, alignSelf: "center", marginTop: 20 }}>
-        Home Screen
-      </Text>
-      <View
-        style={{
-          width: "60%",
-          flex: 1,
-          justifyContent: "center",
-          alignSelf: "center"
-        }}
-      >
-        <View style={{ height: 15 }} />
-        <Button
-          title="Got to Cart"
-          onPress={() => navigation.navigate("Cart")}
-        />
-        <View style={{ height: 15 }} />
-        <Button
-          title="Got to Settings"
-          onPress={() => navigation.navigate("Settings")}
-        />
-        <View style={{ height: 15 }} />
-        <Button
-          title="Got to Profile"
-          onPress={() => navigation.navigate("Profile")}
-        />
-      </View>
+    <View style={styles.center}>
+      <Text>This is the home screen</Text>
+      <Button
+        title="Go to About Screen"
+        onPress={() => navigation.navigate("About")}
+      />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  center: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center"
+  }
+});
 
 export default Home;
