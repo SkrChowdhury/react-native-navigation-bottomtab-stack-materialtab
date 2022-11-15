@@ -9,9 +9,9 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import Settings from "../screens/Settings";
+import AppointmentPage from "../screens/AppointmentPage";
 
 const Stack = createStackNavigator();
-const navigation = useNavigation();
 
 const screenOptionStyle = {
   headerStyle: {
@@ -22,6 +22,7 @@ const screenOptionStyle = {
 };
 
 const MainStackNavigator = () => {
+  const navigation = useNavigation();
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen
@@ -30,6 +31,21 @@ const MainStackNavigator = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen name="About" component={About} />
+      <Stack.Screen
+        name="Appointment"
+        component={AppointmentPage}
+        options={{
+          headerTitle: "Contact",
+          headerLeft: () =>
+            <FontAwesome
+              onPress={() => navigation.goBack()}
+              name="chevron-left"
+              size={20}
+              color="white"
+              style={{ padding: 5 }}
+            />
+        }}
+      />
     </Stack.Navigator>
   );
 };
