@@ -21,55 +21,43 @@ const screenOptionStyle = {
   headerBackTitle: "Back"
 };
 
-const MainStackNavigator = () => {
-  const navigation = useNavigation();
+const MainStackNavigator = ({ navigation }) => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen
         name="Home"
         component={Home}
-        options={{ headerShown: false }}
+        options={{ headerShown: true }}
       />
       <Stack.Screen name="About" component={About} />
-      <Stack.Screen
-        name="Appointment"
-        component={AppointmentPage}
-        options={{
-          headerTitle: "Contact",
-          headerLeft: () =>
-            <FontAwesome
-              onPress={() => navigation.goBack()}
-              name="chevron-left"
-              size={20}
-              color="white"
-              style={{ padding: 5 }}
-            />
-        }}
-      />
     </Stack.Navigator>
   );
 };
 
-const ContactStackNavigator = () => {
+const ContactStackNavigator = ({ navigation }) => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen
         name="Contact"
         component={Contact}
         options={{
-          headerTitle: "Contact",
-          headerLeft: () =>
-            <FontAwesome
-              onPress={() => navigation.navigate("Home")}
-              name="chevron-left"
-              size={20}
-              color="white"
-              style={{ padding: 5 }}
-            />
+          headerTitle: "Contact"
         }}
       />
     </Stack.Navigator>
   );
 };
+const SettingsStackNavigator = ({ navigation }) => {
+  return (
+    <Stack.Navigator screenOptions={screenOptionStyle}>
+      <Stack.Screen
+        name="Settings"
+        component={Settings}
+        options={{ headerTitle: "Settings" }}
+      />
+      <Stack.Screen name="AppointmentPage" component={AppointmentPage} />
+    </Stack.Navigator>
+  );
+};
 
-export { MainStackNavigator, ContactStackNavigator };
+export { MainStackNavigator, ContactStackNavigator, SettingsStackNavigator };
